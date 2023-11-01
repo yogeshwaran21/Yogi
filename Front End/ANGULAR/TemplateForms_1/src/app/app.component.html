@@ -1,0 +1,24 @@
+<form #projectData="ngForm" (ngSubmit)="processData(projectData)">
+
+  ProjectID <input type="number" name="projectID" ngModel/><br>
+  Project Name <input type="text" name="projectName" ngModel/><br>
+  Project Start Date <input type="date" name="startDate" ngModel/><br>
+  Project End Date <input type="date" name="endDate" ngModel/><br>
+  <input type="submit" value="Save"/><br>
+
+</form>
+<b>Employee Details</b><br>
+<table style="border: 2px solid red;">
+<tr><td>Project ID</td>
+<td>Project Name</td>
+<td>Start Date</td>
+<td>End Date</td>
+</tr>
+<tr *ngFor="let p of projects_list">
+  <td>{{p.projectID}}</td>
+  <td>{{p.projectName}}</td>
+  <td>{{p.startDate}}</td>
+  <td>{{p.endDate}}</td>
+</tr>
+</table>
+<router-outlet></router-outlet>

@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>
+            ASSIGN 1
+        </title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            function validate(){
+                    var first=document.getElementById("fname").value
+                    var last=document.getElementById("lname").value
+                    var pin=document.getElementById("pcode").value
+                    var user=document.getElementById("user").value
+                    var mail=document.getElementById("email").value
+                    var pas=document.getElementById("pass").value
+                    var repas=document.getElementById("re").value
+                    submit=OK
+        if (first.length>25)
+                {
+                alert("The First name must be less than 25 characters")
+                document.getElementById ("fname").focus ()
+                submitOK=false
+                }
+        if (last.length>25)
+                {
+                alert("The Last name must be less than 25 characters")
+                document.getElementById ("lname").focus ()
+                submitOK=false
+                }
+         if (first.match(/[^a-zA-Z ]/)) 
+                {
+          window.alert("The first name must contain only alphabets");
+          document.getElementById("fname").focus();
+          submitOK = false;
+          return false;
+                }
+
+        if (last.match(/[^a-zA-Z ]/)) {
+          window.alert("The last name must contain only alphabets");
+          document.getElementById("lname").focus();
+          submitOK = false;
+          return false;
+                }
+        if (isNaN(pin) || pin.length < 6) {
+          window.alert("The postal code must be a number of 6 digits");
+          document.getElementById("pcode").focus();
+          submitOK = false;
+          return false;
+            }
+
+        if (user.length < 6) {
+          window.alert("The user ID must be a minimum of 6 characters");
+          document.getElementById("user").focus();
+          submitOK = false;
+          return false;
+            }
+
+        if (user.match(/[^a-zA-Z0-9]/)) {
+          window.alert("The user ID must contain only alphabets and numbers");
+          document.getElementById("user").focus();
+          submitOK = false;
+          return false;
+            }
+
+        if (user.charAt(0).match(/[^a-zA-Z]/)) {
+          window.alert("The user ID must start with an alphabet");
+          document.getElementById("user").focus();
+          submitOK = false;
+          return false;
+            }
+
+        if (pas.length < 8) {
+          window.alert("The password must be a minimum of 8 characters");
+          document.getElementById("pass").focus();
+          submitOK = false;
+          return false;
+            }
+
+        if (pas.match(/[^a-zA-Z0-9]/)) {
+          window.alert("The password must contain only alphabets and numbers");
+          document.getElementById("pass").focus();
+          submitOK = false;
+          return false;
+            }
+
+        if (pas.charAt(0).match(/[^a-zA-Z]/)) {
+          window.alert("The password must start with an alphabet");
+          document.getElementById("pass").focus();
+          submitOK = false;
+          return false;
+            }
+
+        if (pas != repas) {
+          window.alert("The passwords do not match");
+          document.getElementById("re").focus();
+          submitOK = false;
+          return false;
+            }
+
+        
+
+            window.alert("Please fill in all the fields");
+
+            return false;
+      }
+            
+        </script>
+        <form action="http://www.google.com">
+            <p><b style="color:red"><h2>Tell us about yourself</h2></b></p>
+            <p><b style="color:blue"><h2>Your Name</h2></b></p>
+            <i><p style="color:violet">First name:</p></i>
+                <input type="text" name="First name" id="fname"/>
+            <i><p style="color:violet">Last name:</p></i>
+                <input type="text" name="Last name" id="lname"/>
+            <p><b style="color:blue"><h2>Postal Code</h2></b></p>
+                <input type="text" name="Pin Code" id="pcode"/>
+            <p><b style="color:red"><h2>Select an ID and Password</h2></b></p>
+            <p><b style="color:blue"><h2>UserID</h2></b></p>
+            <input type="text" name="UserID" id="email"/>@ndparking.com ID may consist of a-z,0-9,underscores,and a single dot(.)
+            <p><b style="color:blue"><h2>Password</h2></b></p>
+            <input type="password" name="Password" id="pass"/><br>
+            Capitalization matters. Use 6 to 32 characters, no spaces.
+            <p><b style="color:blue"><h2>Re-type Password</h2></b></p>
+            <input type="text" name="Re-type Password" id="re"/><br><br>
+            3.<br><input type="submit" value="Submit"/>&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="reset" name="Reset"/>
+
+        </form>
+    </body>
+</html>

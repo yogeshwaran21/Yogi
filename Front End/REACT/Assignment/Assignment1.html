@@ -1,0 +1,128 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            function validate(){
+                var firname=document.getElementById("fname").value
+                var laname=document.getElementById("lname").value
+                var pocode=document.getElementById("pcode").value
+                var mail=document.getElementById("email").value
+                var pass=document.getElementById("password").value
+                var retypepass=document.getElementById("repass").value
+                submitOK=true
+
+                if (firname.length>5){
+                    alert("The firstname must be less than 25 characters")
+                    document.getElementById ("fname").focus ()
+                    submitOK=false
+                }
+                if (laname.length>5){
+                    alert("The lastname must be less than 25 characters")
+                    document.getElementById ("lname").focus ()
+                    submitOK=false
+                }
+               
+                if (firName.match(/[^a-zA-Z ]/)) {
+                    window.alert("The first name must contain only alphabets");
+                    document.getElementById("fName").focus();
+                    submitOK = false;
+                    return false;
+        }
+
+        if (laName.match(/[^a-zA-Z ]/)) {
+          window.alert("The last name must contain only alphabets");
+          document.getElementById("lName").focus();
+          submitOK = false;
+          return false;
+        }
+
+        if (isNaN(pocode) || pocode.length < 6) {
+          window.alert("The postal code must be a number of 6 digits");
+          document.getElementById("pcode").focus();
+          submitOK = false;
+          return false;
+        }
+
+        if (mail.length < 6) {
+          window.alert("The user ID must be a minimum of 6 characters");
+          document.getElementById("email").focus();
+          submitOK = false;
+          return false;
+        }
+
+        if (mail.match(/[^a-zA-Z0-9]/)) {
+          window.alert("The user ID must contain only alphabets and numbers");
+          document.getElementById("email").focus();
+          submitOK = false;
+          return false;
+        }
+
+        if (mail.charAt(0).match(/[^a-zA-Z]/)) {
+          window.alert("The user ID must start with an alphabet");
+          document.getElementById("email").focus();
+          submitOK = false;
+          return false;
+        }
+
+        if (pass.length < 8) {
+          window.alert("The password must be a minimum of 8 characters");
+          document.getElementById("password").focus();
+          submitOK = false;
+          return false;
+        }
+
+        if (pass.match(/[^a-zA-Z0-9]/)) {
+          window.alert("The password must contain only alphabets and numbers");
+          document.getElementById("password").focus();
+          submitOK = false;
+          return false;
+        }
+        if (pass.charAt(0).match(/[^a-zA-Z]/)) {
+          window.alert("The password must start with an alphabet");
+          document.getElementById("password").focus();
+          submitOK = false;
+          return false;
+        }
+
+        if (pass != retypepass) {
+          window.alert("The passwords do not match");
+          document.getElementById("repass").focus();
+          submitOK = false;
+          return false;
+        }
+
+        // if (submitOK) {
+        //   window.open("http://www.google.com");
+        //   return true;
+        // }
+
+        window.alert("Please fill in all the fields");
+
+        return false;
+        }
+        </script>
+        <form action ="http://www.google.com">    
+            <h1 style="color:red">1.Tell us about yourself</h1>
+            <h2 style="color:blue">Your Name</h2>
+            <p style="color:palevioletred">First name:</p>
+            <input type="text" id="fname"><br>
+            <p style="color:palevioletred">Last name:</p>
+            <input type="text" id="lname"><br>
+            <h2 style="color:blue">Postal code</h2>
+            <input type="number" id="pcode"><br>
+            <h1 style="color:red">2.Select an ID and password</h1>
+            <h2 style="color:blue">UserID</h2>
+            <input type="email" id="email">@ndparking.com<br>ID may consist of a-z, 0-9, underscores, and a single dot (.)<br>
+            <h2 style="color:blue">Password</h2>
+            <input type="password" id="password"><br>Capitalization matters. Use 6 to 32 characters, no spaces.
+            <h2 style="color:blue">Re-type Password</h2>
+            <input type="password" id="repass"><br>
+            3.<br>
+            <input type="submit" value="submit">
+            <input type="reset" value="reset">
+
+        </form>
+    </body>
+</html>

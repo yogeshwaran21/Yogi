@@ -1,0 +1,23 @@
+<html>
+    <script>
+        var ID=100;
+        ID+=100;
+        document.writeln("ID : " + ID + "<br>");
+        document.writeln("ID : " + typeof(ID) + "type<br>");
+        if(typeof(ID)=="number")
+            document.writeln("ID : "+ID*5+"<br>");
+        if(typeof(ID)=="string")
+            document.writeln("Length = " + ID.length);
+        ID="Hello World&nbsp";
+        ID+=100;
+        document.writeln("ID : " + typeof(ID) + "type<br>");
+        document.writeln("ID Is " + ID + "<br>");
+        if(typeof(ID)=="number")
+            document.writeln("ID : "+ID*5+"<br>");
+        if(typeof(ID)=="string")
+            document.writeln("Length = " + ID.length);
+    </script>
+    <body>
+
+    </body>
+</html>

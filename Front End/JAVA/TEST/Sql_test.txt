@@ -1,0 +1,75 @@
+-- create schema assess1
+-- use assess1
+
+create table strike(
+Id int primary key,
+Date date not null,
+time time not null,
+lat double,
+lon double,
+intensity int(10)
+);
+
+create table Fires(
+Id int primary key,
+Date date not null,
+lat double,
+lon double,
+Area double
+);
+
+create table Pictures(
+Id int,
+foreign key (Id) references fires(Id),
+Strike_fk int,
+foreign key (strike_fk) references strike(Id),
+Date date not null,
+Filename varchar(50)
+);
+
+create table Lightning_Fires(
+Id int primary key,
+S_id int,
+foreign key (S_id) references strike(Id),
+F_id int,
+foreign key (F_id) references fires(Id)
+);
+
+insert into strike values(1,'2006-05-05','02:02:00',41.34,122.45,6235);
+insert into strike values(2,'2006-05-05','02:09:00',40.47,120.47,16235);
+insert into strike values(3,'2006-05-05','03:32:00',42.14,122.98,7779);
+insert into strike values(4,'2006-05-05','04:34:00',38.32,122.17,4645);
+insert into strike values(5,'2006-05-05','05:02:00',39.04,121.22,8989);
+
+insert into fires values(1,'2006-05-05',32.34,-122.45,123.90);
+insert into fires values(2,'2006-05-05',37.19,-121.66,627.09);
+insert into fires values(3,'2006-05-05',40.47,-120.47,45.00);
+insert into fires values(4,'2006-05-05',42.14,-122.98,1774.90);
+insert into fires values(5,'2006-05-05',37.21,-120.47,2034.8);
+insert into fires values(6,'2006-05-05',42.04,-126.22,49.62);
+
+insert into Pictures values(1,1,'2006-05-05','04938245.png');
+insert into Pictures values(2,1,'2006-05-05','04983284.png');
+insert into Pictures values(3,2,'2006-05-05','04773626.png');
+insert into Pictures values(4,2,'2006-05-05','04789789.png');
+insert into Pictures values(5,4,'2006-05-05','04323456.png');
+insert into Pictures values(6,5,'2006-05-05','04325342.png');
+
+
+
+-- 1 select * from strike,fires,pictures;
+-- select * from strike
+-- select * from fires
+-- select * from pictures
+
+-- 2 create table Lightning_Fires(
+-- Id int primary key,
+-- S_id int,
+-- foreign key (S_id) references strike(Id),
+-- F_id int,
+-- foreign key (F_id) references fires(Id)
+-- );
+
+-- 3 select avg(intensity) avg_intensity from strike
+-- 5 select area max_3_area from fires order by area desc limit 3 
+-- 6 select sum(area) total_area from (select area from fires order by area desc limit 3) fires

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <h2>classes in Javascript</h2>
+            <p>Creating two bikes</p>
+            
+            <form  action="#" >
+            Bikename<input type="text" id="bike"><br>
+            Myear<input type="number" id="year"><br>
+            <input type="submit" value="submit">
+            <input type="button" value="get" onclick="getInfo()">
+            </form>
+            <p id="demo"></p>
+            <script>
+                class bike{
+                    name="RE";
+                    year="2020";
+                    setName(bike){
+                        this.name=bike;
+                    }
+                    setYear(year){
+                        this.year=year;
+                    }
+                    getYear(){
+                        return this.year;
+                    }
+                    getName(){
+                        return this.name;
+                    }
+                }
+                 function getInfo()
+                {
+                    const b1=new bike();
+                    b1.setName(document.getElementById("bike").value);
+                    b1.setYear(document.getElementById("year").value);
+                    document.getElementById("demo").innerHTML=b1.getName() +" "+b1.getYear();
+
+                }
+                // const b1 = new bike();
+                // b1.setName("Honda");
+                // b1.setYear("2010");
+                // //const b2 = new bike();
+                // document.getElementById("demo").innerHTML=b1.getName() +" "+b1.getYear();
+            </script>
+        </body>
+    </html>

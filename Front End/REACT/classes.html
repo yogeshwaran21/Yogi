@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <h2>classes in Javascript</h2>
+            <p>Creating two bikes</p>
+            <p id="demo"></p>
+            <script>
+                class bike{
+                    name="RE"
+                    year="2020"
+                }
+                const b1 = new bike();
+                b1.name="Triump";
+                b1.year="2020";
+                const b2 = new bike();
+                b2.name="Honda";
+                b2.year="2010";
+                document.getElementById("demo").innerHTML=b1.name +" "+b1.year;
+                document.getElementById("demo").innerHTML+=b2.name +" "+b2.year;
+            </script>
+        </body>
+    </html>

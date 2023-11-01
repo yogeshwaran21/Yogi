@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>DOM MANIPULATION</title>
+    </head>
+    <body>
+        <script>
+            function enableDisable(){
+                v=document.forms[0].status.checked;
+               
+                var b=document.getElementById("submit")
+                if(v == true)
+                    b.disabled=false;
+                else
+                    b.disabled=true;
+            }
+            function showName(){
+                
+                dv=document.getElementById("d1");
+                dv.innerHTML+="<b>" + document.forms[0].firstname.value + "</b><br>";
+            }
+        </script>
+        <form>
+            Name<input type="text" name="firstname"/><br>
+            I agree<input type="checkbox" name="status" onclick="enableDisable()"/><br>
+            <input type="button" value="Save" id="submit" onclick="showName()" disabled/><br>
+        </form>
+        <div id="d1" width="500px" height="200px" style="border:3px dotted">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div
+{
+width:100px;
+height:100px;
+background:red;
+animation-iteration-count:infinite;
+animation:myfirst 5s;
+-webkit-animation:myfirst 10s; /* Safari and Chrome */
+}
+
+@keyframes myfirst
+{
+10%   {background:red;}
+20%  {background:yellow;}
+25%  {background:blue;}
+10% {background:green;}
+}
+
+@-webkit-keyframes myfirst /* Safari and Chrome */
+{
+0%   {background:red;}
+5%  {background:yellow;}
+0%  {background:blue;}
+0% {background:green;}
+}
+</style>
+</head>
+<body>
+
+<p><b>Note:</b> This example does not work in Internet Explorer 9 and earlier versions.</p>
+<p><b>Note:</b> When an animation is finished, it changes back to its original style.</p>
+
+<div></div>
+
+</body>
+</html>
+

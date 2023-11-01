@@ -1,0 +1,182 @@
+1)
+
+package test;
+import java.util.*;
+
+public class Hello {
+	public static void main(String[] args) {
+		int sal;
+		float hra,da,gross= 0;
+		Scanner scan=new Scanner(System.in);
+		System.out.println("Enter the Salary");
+		sal=scan.nextInt();
+		if(sal>=1 && sal<=4000) {
+			hra=(sal/100)*10;
+			da=(sal/100)*50;
+			gross=sal+hra+da;
+		}
+	    if(sal>=4001 && sal<=8000) {
+			hra=(sal/100)*20;
+			da=(sal/100)*60;
+			gross=sal+hra+da;
+		}
+	    if(sal>=8001 && sal<=12000) {
+			hra=(sal/100)*25;
+			da=(sal/100)*70;
+			gross=sal+hra+da;
+		}
+	    if(sal>=12000) {
+	    	hra=(sal/100)*30;
+			da=(sal/100)*80;
+			gross=sal+hra+da;
+	    } 
+	    else {
+	    	System.out.println("Enter correct salary amount");
+	    }
+	    
+	    System.out.println("Gross salary = " + gross);
+	    scan.close();
+	}
+	}
+
+2)
+
+package test;
+import java.util.*;
+
+public class Hello {
+	public static void main(String[] args) {
+		System.out.println("Enter the number - ");
+		Scanner scan=new Scanner(System.in);
+		int n=scan.nextInt();
+		int input[]=new int[n];
+		System.out.println("Enter the Values -");
+		for(int i=0;i<n;i++)
+		input[i]=scan.nextInt();
+		
+		for(int i=0;i<n;i++)
+		{
+			for(int j=i+1;j<n;j++)
+			{
+				if(input[i]==0)
+				break;
+				if(input[i]==input[j])
+				input[j]=0;
+			}
+		}
+		for(int i=0;i<input.length;i++)
+		{
+			if(input[i]>0)
+				System.out.println(input[i]);
+		}
+}
+}
+
+
+3)
+
+package test;
+import java.util.*;
+
+public class Hello {
+	public static void main(String[] args) {
+		int n;
+		System.out.println("Enter a number");
+		Scanner scan=new Scanner(System.in);
+		n=scan.nextInt();
+		int num=n;
+		int rev=0;
+        int count=0;
+        while(n>0){
+        if(count<=4){
+            int x=n%10;
+            rev=rev * 10 + x;
+            n=n/10;
+            count++;}
+        else
+            System.out.println("Number exceeded");
+          }
+         
+        if(count==4) {
+            System.out.println(rev);
+
+		if(rev==num) {
+			System.out.println("Given number is palindrome");
+		}
+		else {
+			System.out.println("Given number is not palindrome");
+		}}
+        else
+        System.out.println("Not a 4 digit number");
+scan.close();
+}
+}
+
+
+4)
+
+package test;
+
+public class employee {
+	private int age;
+	private String name;
+	private double salary;
+
+    public employee(String name, int age, double basic, double hra, double da, double allowance) {
+        this.name = name;
+        this.age = age;
+        this.salary = calSal(basic, hra, da, allowance);
+    }
+   
+    public employee(String name, int age, double basic, double hra, double da) {
+        this(name, age, basic, hra, da, 0.0);
+    }
+  
+    private double calSal(double basic, double hra, double da, double allowance) {
+        return basic + hra + da + allowance;
+    }
+  
+    public void emp() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Salary: " + salary);
+    }
+}
+
+import java.util.Scanner;
+
+public class Hello {
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+        employee[] employees = new employee[2];
+
+        for (int i = 0; i < 2; i++) {
+            System.out.print("Name: ");
+            String name = scan.nextLine();
+            System.out.print("Age - ");
+            int age = scan.nextInt();
+            System.out.print("Basic - ");
+            double basic = scan.nextDouble();
+            System.out.print("Hra - ");
+            double hra = scan.nextDouble();
+            System.out.print("Da - ");
+            double da = scan.nextDouble();
+            System.out.print("Allowance - ");
+            double allowance = scan.nextDouble();
+
+            if (allowance == 0) {
+                employees[i] = new employee(name, age, basic, hra, da);
+            } else {
+                employees[i] = new employee(name, age, basic, hra, da, allowance);
+            }
+            scan.nextLine();
+        }
+        scan.close();
+      
+        for (int i = 0; i < 2; i++) { 
+        	 System.out.print("\n");
+            employees[i].emp();
+        }
+	}
+		
+}

@@ -1,0 +1,10 @@
+.bstyle{
+    color: red;
+    height: 40px; width: 100px;
+}
+.divstyle{
+    border-style: ridge;
+    border-color: aqua;
+    border-width: 5px;
+    text-align: center;
+}

@@ -1,0 +1,8 @@
+<br><b>Departments List</b>
+<table style="display:grid;border:3px;border-style: dotted;">
+<tr><td>Department ID</td><td>Department Name</td></tr>
+<tr *ngFor="let dept of deptlist">
+    <td>{{dept.deptId}}</td>
+    <td>{{dept.deptName}}</td>
+</tr>
+</table>

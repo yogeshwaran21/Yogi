@@ -1,0 +1,250 @@
+1)  Sum Of Squares Of n Numbers:
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int n;
+	int count=0;
+	System.out.print("Enter a Number : ");
+        Scanner scan=new Scanner(System.in);
+        n=scan.nextInt();
+        for(int i=0;i<=n;i++)
+        count += i*i;
+     System.out.println("Sum of squares of Number is " + count);
+    }
+}
+
+
+2)  Factorial Of a Given Number:
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int n;
+        int count=1;
+        System.out.print("Enter a Number : ");
+        Scanner scan=new Scanner(System.in);
+        n=scan.nextInt();
+        for(int i=n;i>0;i--)
+        count*=i;
+        System.out.println("Factorial of a given number is " + count);
+    }
+}
+
+
+3)  Given Number is Prime Number or not:
+
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int n,i;
+        int count=0;
+        System.out.print("Enter a Number : ");
+        Scanner scan=new Scanner(System.in);
+        n=scan.nextInt();
+        for(i=1;i<=n;i++){
+            if(n%i==0)
+            count++;
+        }
+            if(count==2)
+            System.out.println("Given Number is Prime Number");
+            else
+            System.out.println("Given Number is Not a Prime Number");
+    }
+}
+
+4)Sum of Digits of a Given Number:
+
+
+import java.util.Scanner;
+
+class HelloWorld{
+    public static void main(String[] args) {
+        int n,a;
+        int count=0;
+        System.out.print("Enter a Number :");
+        Scanner scan = new Scanner(System.in);
+         n = scan.nextInt();
+        while(n>0)
+        {
+            a = n%10;
+            count += a;
+            n = n/10;
+        }
+        System.out.println("Sum of Digits Of a given Number is " + count);
+
+    }
+}
+
+5)Prime Numbers Below 200:
+
+
+import java.util.Scanner;
+
+class HelloWorld{
+    public static void main(String[] args) {
+        int n,i,j;
+        int count=0;
+        System.out.println("Enter a Number :");
+        Scanner scan = new Scanner(System.in);
+         n = scan.nextInt();
+         for(i=1;i<=n;i++){
+            for(j=1;j<=i;j++){
+            if(i%j==0)
+            count++;
+            }
+            if(count==2)
+            System.out.println(i +" ");
+            count=0;
+        }
+    }
+}
+
+
+6)Fibonacci Series up to n:
+
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int n;
+        System.out.println("Enter a Number :");
+        n = scan.nextInt();
+        int n1 = 0,n2 = 1;
+        System.out.println(n1);
+        System.out.println(n2);
+        int n3;
+        for (int i = 2; i < n; i++) {
+            n3 = n1 + n2;
+            System.out.println(n3);
+            n1 = n2;
+            n2 = n3;
+        }
+    }
+}
+
+
+7)Array of 10 numbers,find the sum, average, largest, second largest and smallest number:
+
+
+import java.util.*;
+class HelloWorld{
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int[] arr = new int[10];
+        System.out.println("Enter 10 Numbers:");
+        for (int i = 0; i < 10; i++) {
+            arr[i] = scan.nextInt();
+        }
+        int sum = 0;
+        for (int i = 0; i < 10; i++) {
+            sum += arr[i];
+        }
+        double average = (double) sum / 10;
+        int largest = arr[0];
+        int secondLargest = arr[0];
+        int smallest = arr[0];
+        for (int i = 0; i < 10; i++) {
+            if (arr[i] > largest) {
+                secondLargest = largest;
+                largest = arr[i];
+            } else if (arr[i] > secondLargest && arr[i] != largest) {
+                secondLargest =arr[i];
+            }
+            if (arr[i] < smallest) {
+                smallest = arr[i];
+            }
+        }
+        System.out.println("Sum Of Array: " + sum);
+        System.out.println("Average: " + average);
+        System.out.println("Largest: " + largest);
+        System.out.println("Second Largest: " + secondLargest);
+        System.out.println("Smallest: " + smallest);
+    }
+}
+
+8)Matrix Addition:
+
+import java.util.*;
+class HelloWorld {
+    public static void main(String[] args) {
+        int i;
+        int count=0;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter No. Of Rows : ");
+        int x=scan.nextInt();
+        System.out.println("Enter No. Of colomns : ");
+        int y=scan.nextInt();
+        int[][] arr1 = new int[x][y]; 
+        int[][] arr2= new int[x][y];
+        int[][] arr3= new int[x][y];
+
+        System.out.println("Enter Matrix 1 values : ");
+
+        for(i=0;i<arr1.length;i++){
+            for(int j=0;j<arr1[i].length;j++){
+                arr1[i][j]=scan.nextInt();
+               
+            }
+        } 
+        System.out.print("\n");
+        System.out.println("Enter Matrix 2 values : ");
+        for(i=0;i<arr2.length;i++){
+            for(int j=0;j<arr2[i].length;j++){
+                arr2[i][j]=scan.nextInt();
+               
+            }
+        }   
+        for(i=0;i<arr3.length;i++){
+            for(int j=0;j<arr3[i].length;j++){
+                arr3[i][j] = arr1[i][j] + arr2[i][j];
+                System.out.print("\t" + arr3[i][j]);
+            }
+        }   
+
+    }
+}
+
+
+9) List all the  Even Numbers:
+
+class HelloWorld {
+    public static void main(String[] arr) {
+        // for( String i:arr){
+             int n=Integer.parseInt(arr[0]);
+        // }
+        for(int j=1;j<=n;j++){
+            if(j%2==0)
+            System.out.print(j + " ");            
+        }
+    }
+}
+
+10)Read values,sum,average and values less than avg:
+
+
+class HelloWorld {
+    public static void main(String[] arr) {
+        int add=0;
+        for( String x:arr){
+             int n = Integer.parseInt(x);
+             add += n;
+        }
+             double avg =(double)add/arr.length; 
+         System.out.println("Sum of array is " + add);
+         System.out.println("Average of arr is " + avg);   
+        int count=0;    
+         for( String i : arr){
+                if(Integer.parseInt(i)<avg)
+                count++;
+         }
+                System.out.println("No. of values less than average is " + count);
+         
+        }
+    }
+
+
+
+

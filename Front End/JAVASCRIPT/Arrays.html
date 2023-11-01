@@ -1,0 +1,35 @@
+<HTML>
+<BODY>
+<script type="text/javascript">
+
+var arr = new Array(4)
+arr[0] = "Jani"
+arr[1] = "Tovedes"
+arr[2] = "Hegeretel"
+arr[3] = 100
+document.writeln("arr :" + arr)
+var arr2 = ["John","Andy","Wendy"]
+arr2[3]=400 
+document.writeln("<br>arr2 :" + arr2)
+document.write("<br>Concatenated array : " + arr.concat(arr2) + ".<BR>")
+document.write("Concatenated array : " + arr.join(".") + ".<BR>")
+document.write("Concatenated array : " + arr.join("%") + "<BR>")
+
+document.write("arr : " + arr + "<BR>")
+document.write("Last Element : " + arr.pop() + "<BR>")
+document.write("Last Element : " + arr.push("100") + "<BR>")
+document.write ("Length : " + arr.length + "<br>");
+document.write("arr : " + arr + "<BR>")
+
+document.write("First Element : " + arr.shift() + "<BR>")
+document.write("arr : " + arr + "<BR>")
+
+arr.push("Kai Jim")
+document.write("arr : " + arr + "<BR>")
+
+
+document.write ("arr after reversing : " + arr.reverse() + "<BR>")
+document.write ("arr after sorting : " + arr.sort () + "<BR>")
+</script>
+</BODY>
+</HTML>
